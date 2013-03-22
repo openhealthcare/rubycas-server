@@ -1,6 +1,7 @@
 source "http://rubygems.org"
 gemspec
-
+gem "pg"
+gem "activerecord-postgresql-adapter"
 
 # Gems for authenticators
 group :ldap do
