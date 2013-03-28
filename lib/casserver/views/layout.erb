@@ -22,9 +22,6 @@
       <div class="row-fluid">
         <header>
           <img src="<%= escape_html @uri_path %>/img/toplogo.png" />
-          <span>
-            Accounts
-          </span>
         </header>
       </div>
     </div>
@@ -35,6 +32,19 @@
       <%= yield %>
 
     </div> <!-- /container -->
+
+    <div class="navbar navbar-fixed-bottom">
+      <footer>
+        <div class="row-fluid">
+          <div class="span4 offset4">
+            <center>
+              brought to you by
+              <a href="http://www.openhealthcare.org.uk">Open Health Care UK</a>
+            </center>
+          </div>
+        </div>
+      </footer>
+    </div>
 
   </body>
 </html>
