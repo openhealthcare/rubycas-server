@@ -24,6 +24,12 @@ module CASServer
       headers['Cache-Control'] = 'no-store'
       headers['Expires'] = (Time.now - 1.year).rfc2822
 
+      accounts =  womble_conf['accounts_url']
+
+      ticket = params['ticket']
+      if ticket
+        redirect accounts
+      end
 
       if tgc = request.cookies['tgt']
         tgt, tgt_error = validate_ticket_granting_ticket(tgc)
@@ -31,8 +37,9 @@ module CASServer
 
       puts womble_conf
 
+
       if !tgt or tgt_error
-        redirect "/login", 303
+        redirect "/login?service=#{accounts}", 303
         return
       end
 

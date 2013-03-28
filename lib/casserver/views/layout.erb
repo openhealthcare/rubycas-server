@@ -22,9 +22,12 @@
       <div class="row-fluid">
         <header>
           <img src="<%= escape_html @uri_path %>/img/toplogo.png" />
-          <span class="acct">
-            <%= @authenticated_username if defined?(@authenticated_username) %>
-          </span>
+          <% if defined?(@authenticated_username) %>
+            <span id="logout"><a href="/logout">Log out</a></span>
+            <span id="name" class="acct">
+              <%= @authenticated_username %>
+            </span>
+          <% end %>
         </header>
       </div>
     </div>

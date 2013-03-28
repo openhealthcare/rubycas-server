@@ -12,6 +12,11 @@ header {
     color: #1d1d1b;
 }
 
+header a {
+    color: #f4b119;
+    text-decoration: underline;
+}
+
 header span {
     background: black;
     color: #f4b119;
