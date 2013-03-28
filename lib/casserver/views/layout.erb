@@ -7,12 +7,34 @@
 
   <head>
     <title><%= escape_html @organization %><%= t.label.central_login_title %></title>
-    <link rel="stylesheet" type="text/css" href="<%= escape_html @uri_path %>/themes/cas.css" />
-    <link rel="stylesheet" type="text/css" href="<%= escape_html @uri_path %>/themes/<%= escape_html @theme %>/theme.css" />
-    <link rel="icon" type="image/png" href="<%= escape_html @uri_path %>/themes/<%= escape_html @theme %>/favicon.png" />
+
+    <link rel="stylesheet" type="text/css" href="<%= escape_html @uri_path %>/css/lib/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="<%= escape_html @uri_path %>/css/lib/bootstrap/css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="<%= escape_html @uri_path %>/css/ohc.auth.css" />
+
+    <link rel="icon" type="image/ico" href="<%= escape_html @uri_path %>/img/favicon.ico" />
   </head>
 
   <body onload="if (document.getElementById('username')) document.getElementById('username').focus()">
-    <%= yield %>
+
+
+    <div class="container">
+      <div class="row-fluid">
+        <header>
+          <img src="<%= escape_html @uri_path %>/img/toplogo.png" />
+          <span>
+            Accounts
+          </span>
+        </header>
+      </div>
+    </div>
+
+
+    <div class="container">
+
+      <%= yield %>
+
+    </div> <!-- /container -->
+
   </body>
 </html>

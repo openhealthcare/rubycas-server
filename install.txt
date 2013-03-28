@@ -1,0 +1,17 @@
+Install RVM (Must be root/have sudo)
+
+curl -L https://get.rvm.io | bash -s stable --rails --autolibs=enabled
+
+rvm use 2.0.0@auth --create
+
+git clone https://github.com/rubycas-server
+
+cd rubycas-server
+
+cp config/config.example.yml config.yml
+
+bundle install
+
+create database casserver with owner ohc;
+
+bundle exec rubycas-server -c config.yml
