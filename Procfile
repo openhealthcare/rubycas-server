@@ -1,0 +1,1 @@
+web: bundle exec rubycas-server -c config.yml
